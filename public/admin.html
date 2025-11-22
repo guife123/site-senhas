@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Senhas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-bg">
+  <main class="admin-wrapper">
+    <section class="admin-card">
+      <h1>Controlo de Senhas</h1>
+
+      <label class="label">Balcão</label>
+<div class="input" style="display:flex;align-items:center;justify-content:center;font-weight:700;">
+  Balcão 1
+</div>
+
+
+      <div class="row">
+        <button id="nextBtn" class="btn primary">Chamar próxima</button>
+        <button id="repeatBtn" class="btn">Repetir</button>
+      </div>
+
+      <hr />
+
+      <label class="label">Definir senha manualmente</label>
+      <div class="row">
+        <input id="manualInput" class="input" type="number" placeholder="ex.: 25" />
+        <button id="setBtn" class="btn">Definir</button>
+      </div>
+
+      <hr />
+
+      <button id="resetBtn" class="btn danger">Reset geral (início do dia)</button>
+
+      <p id="status" class="status"></p>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
