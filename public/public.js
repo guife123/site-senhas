@@ -2,7 +2,7 @@ const senhaEl = document.getElementById('senhaUnica');
 const updatedAtEl = document.getElementById('updatedAt');
 
 function render(state) {
-  const senha = (state.balcoes && state.balcoes["1"]) != null ? state.balcoes["1"] : 0;
+  const senha = state.senhaAtual != null ? state.senhaAtual : 0;
 
   updatedAtEl.textContent = state.updatedAt
     ? `Atualizado: ${new Date(state.updatedAt).toLocaleTimeString()}`

@@ -23,7 +23,7 @@ async function post(url, body) {
 nextBtn.addEventListener('click', async () => {
   try {
     const balcao = "1";
-    const data = await post('/api/call-next', { balcao });
+    const data = await post('/api/call-next', {});
     setStatus(`Balcão ${data.balcao} → Senha ${data.senhaAtual}`);
   } catch (e) {
     setStatus('Erro ao chamar próxima', false);
@@ -33,7 +33,7 @@ nextBtn.addEventListener('click', async () => {
 repeatBtn.addEventListener('click', async () => {
   try {
     const balcao = "1";
-    const data = await post('/api/repeat', { balcao });
+    const data = await post('/api/repeat', {});
     setStatus(`Repetir: Balcão ${data.balcao} → Senha ${data.senhaAtual}`);
   } catch (e) {
     setStatus('Erro ao repetir', false);
@@ -44,7 +44,7 @@ setBtn.addEventListener('click', async () => {
   try {
     const balcao = "1";
     const senha = manualInput.value;
-    const data = await post('/api/set', { balcao, senha });
+    const data = await post('/api/set', { senha });
     setStatus(`Definido: Balcão ${data.balcao} → Senha ${data.senhaAtual}`);
   } catch (e) {
     setStatus('Erro ao definir senha', false);
