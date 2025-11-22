@@ -130,3 +130,36 @@ hr { border: none; border-top: 1px solid #eee; margin: 14px 0; }
   line-height: 1;
 }
 
+/* ===== Ajustes para telemóvel ===== */
+@media (max-width: 600px) {
+
+  /* mostra a imagem inteira (sem cortar) */
+  .public-bg{
+    background-position: top center;
+    background-size: contain;   /* <- isto é a chave */
+    background-repeat: no-repeat;
+    background-color: #d7f2ef;  /* cor de fundo caso sobre espaço */
+  }
+
+  /* em vez de centrar no meio, mete mais para cima e deixa ver animais */
+  .public-wrapper{
+    min-height: auto;
+    padding: 6vh 12px 18vh;  /* mais espaço em baixo para aparecerem os animais */
+    place-items: start center;
+  }
+
+  /* cartão um bocadinho mais pequeno no telemóvel */
+  .card{
+    width: 92vw;
+    border-radius: 28px;
+    padding: 18px;
+  }
+
+  .card-header h1{
+    font-size: 38px;
+  }
+
+  .single-senha{
+    font-size: clamp(90px, 22vw, 150px);
+  }
+}
