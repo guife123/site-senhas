@@ -1,6 +1,6 @@
 :root {
   --green: #2f5d2f;
-  --cream: rgba(250, 243, 210);
+  --cream: rgb(250, 243, 210);
   --shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
@@ -40,6 +40,7 @@
 }
 .muted { margin: 6px 0 0; color: #3a3a3a; opacity: .8; }
 
+/* (mantido caso voltes a usar vários balcões no futuro) */
 .balcoes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -107,13 +108,14 @@
 .status { margin-top: 12px; font-weight: 600; }
 hr { border: none; border-top: 1px solid #eee; margin: 14px 0; }
 
+/* Caixa única da senha */
 .single-box{
   background: white;
   border-radius: 28px;
   box-shadow: var(--shadow);
   padding: 20px 24px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 10px; /* no vertical vamos anular */
 }
 
 .single-senha{
@@ -123,21 +125,21 @@ hr { border: none; border-top: 1px solid #eee; margin: 14px 0; }
   line-height: 1;
 }
 
-/* ===== Ajustes para telemóvel ===== */
+/* ===== Ajustes para telemóvel (tamanhos pequenos) ===== */
 @media (max-width: 600px) {
 
   /* mostra a imagem inteira (sem cortar) */
   .public-bg{
     background-position: top center;
-    background-size: contain;   /* <- isto é a chave */
+    background-size: contain;
     background-repeat: no-repeat;
-    background-color: #d7f2ef;  /* cor de fundo caso sobre espaço */
+    background-color: #d7f2ef;
   }
 
   /* em vez de centrar no meio, mete mais para cima e deixa ver animais */
   .public-wrapper{
     min-height: auto;
-    padding: 6vh 12px 18vh;  /* mais espaço em baixo para aparecerem os animais */
+    padding: 6vh 12px 18vh;
     place-items: start center;
   }
 
@@ -156,6 +158,7 @@ hr { border: none; border-top: 1px solid #eee; margin: 14px 0; }
     font-size: clamp(90px, 22vw, 150px);
   }
 }
+
 /* ===== Fundo para ecrãs VERTICAIS (portrait) ===== */
 @media (orientation: portrait) {
   .public-bg {
@@ -165,6 +168,18 @@ hr { border: none; border-top: 1px solid #eee; margin: 14px 0; }
     background-repeat: no-repeat;
     background-color: #d7f2ef;
   }
+
+  /* centra o cartão no ecrã vertical */
+  .public-wrapper{
+    min-height: 100vh;
+    padding: 0 12px;
+    place-items: center;
+  }
+
+  /* remove empurrão para baixo no vertical */
+  .single-box{
+    margin-top: 0;
+  }
 }
 
 /* ===== Fundo para ecrãs HORIZONTAIS (landscape) ===== */
@@ -172,6 +187,7 @@ hr { border: none; border-top: 1px solid #eee; margin: 14px 0; }
   .public-bg {
     background-image: url('background-landscape.png');
     background-size: cover;     /* enche o ecrã horizontal */
-    background-position: center;
+    background-position: top center; /* garante topo visível */
+    background-repeat: no-repeat;
   }
 }
