@@ -156,3 +156,22 @@ hr { border: none; border-top: 1px solid #eee; margin: 14px 0; }
     font-size: clamp(90px, 22vw, 150px);
   }
 }
+/* ===== Fundo para ecrãs VERTICAIS (portrait) ===== */
+@media (orientation: portrait) {
+  .public-bg {
+    background-image: url('background-portrait.jpg');
+    background-size: contain;   /* mostra a imagem inteira */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #d7f2ef;
+  }
+}
+
+/* ===== Fundo para ecrãs HORIZONTAIS (landscape) ===== */
+@media (orientation: landscape) {
+  .public-bg {
+    background-image: url('background-landscape.png');
+    background-size: cover;     /* enche o ecrã horizontal */
+    background-position: center;
+  }
+}
